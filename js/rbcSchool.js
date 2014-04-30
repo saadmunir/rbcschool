@@ -89,7 +89,7 @@ Firefeed.prototype.onLogin = function(user) {
       self._authHandlers[i](null, self._user);
     }
   });
-}
+};
 
 Firefeed.prototype.login = function(provider) {
   this._firebaseAuthClient.login(provider, {

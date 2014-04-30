@@ -52,20 +52,21 @@
 
       <div class="row row-offcanvas row-offcanvas-right">
 
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron">
-            <h1>RBC School</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          </div>         
-        </div><!--/span-->
-        
         <header id="header">
       	</header>
         
-        <script id="tmpl-page-header" type="text/html">
+    
+ 
+	<div id="login-div" class="pushv4">
+            <a id="login-button" href="#" class="btn clean">
+              <span class="icon facebook"></span>
+              <span>Sign in with Facebook</span>
+            </a>
+          </div>
+		
+      <hr>
+      
+      <script id="tmpl-page-header" type="text/html">
         <div class="wrapper cf">
           <h1 class="logo"><a href="#" id="top-logo"><img src="img/wordmark.png" alt="Firefeed" /></a></h1>
           <nav>
@@ -77,27 +78,71 @@
           </nav>
         </div>
       </script>
-        
-
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Profile</a>
-            <a href="#" class="list-group-item">Messages</a>
-            <a href="#" class="list-group-item">Friends</a>
-            <a href="#" class="list-group-item">Link</a>
-          </div>
-        </div><!--/span-->
-      </div><!--/row-->
       
- 
-	<div id="login-div" class="pushv4">
-            <a id="login-button" href="#" class="btn clean">
-              <span class="icon facebook"></span>
-              <span>Sign in with Facebook</span>
-            </a>
+      <script id="tmpl-content" type="text/html">
+        <div id="content" class="{{classes}}">
+          <div class="wrapper">
+            <div class="row">
+              {{{content}}}
+            </div>
           </div>
-		
-      <hr>
+        </div>
+      </script>
+      
+       <script id="tmpl-profile-body" type="text/html">
+        <div class="threefifth center">
+          <div class="aligncenter pushv4">
+            <div id="profile-content">
+            </div>
+          </div>
+          <ul id="spark-profile-list" class="item-list third left"></ul>
+          <br/>
+          <div class="profile-column profile-column-left">
+            <h3>Followers</h3>
+            <ul id="follower-profile-list" class="item-list third center"></ul>
+          </div>
+          <div class="profile-column profile-column-right">
+            <h3>Following</h3>
+            <ul id="followee-profile-list" class="item-list third right"></ul>
+          </div>
+        </div>
+      </script>
+      
+      <script id="tmpl-timeline-content" type="text/html">
+        <div class="third">
+          <div class="media">
+            <div class="img avatar">
+              <a class="profile-link" href="/?profile={{id}}"><img src="{{pic}}" alt="{{name}}"></a>
+            </div>
+            <div class="body">
+              <h2 class="end"><a class="profile-link" href="/?profile={{id}}">{{name}}</a></h2>
+              <div class="big-copy end">
+                <div class="editable" id="inputLocation">{{location}}</div>
+              </div>
+              <div class="big-copy">
+                <div class="editable" id="inputBio">{{bio}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <textarea id="spark-input" class="text" rows="4" cols="10" placeholder="Share an update"></textarea>
+          </div>
+          <small class="field-help"><span id="c-count"></span> characters remaining</small>
+          <div id="spark-button-div">
+            <a id="spark-button" href="#" class="btn default full pushv4">Update Status</a>
+          </div>
+
+          <div class="separator pushv4"></div>
+
+          <div id="suggested-users">
+            <h3>We suggest you follow:</h3>
+          </div>
+        </div>
+        <div class="twothird">
+          <ul id="spark-timeline-list" class="item-list">
+          </ul>
+        </div>
+      </script>
 
       <footer>
         <p>&copy; Company 2014</p>

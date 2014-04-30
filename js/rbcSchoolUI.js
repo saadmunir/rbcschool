@@ -21,6 +21,7 @@ function RBCSchoolUI() {
   });
 
   self._firefeed.onLoginStateChange(function(error, user) {
+  	console.log('TESTIIIIIIIIIIIIINGGGGGGGGGGGg');
     self.onLoginStateChange(error, user);
   });
   
@@ -104,10 +105,13 @@ RBCSchoolUI.prototype._handleNewSpark = function(listId, limit, func) {
 
 RBCSchoolUI.prototype.onLoginStateChange = function(error, info) {
   this._loggedIn = info;
+  console.log('11111111111111111');
   $("#header").html(Mustache.to_html($("#tmpl-page-header").html(), {user: this._loggedIn}));
   if (info) {
+  	console.log('222222222222222');
     this.renderTimeline(info);
   } else {
+  	console.log('33333333333333');
     this.renderHome();
   }
 };
@@ -122,6 +126,7 @@ RBCSchoolUI.prototype.logout = function(e) {
 };
 
 RBCSchoolUI.prototype.renderTimeline = function(info) {
+  console.log('**************************');
   var self = this;
   $("#header").html(Mustache.to_html($("#tmpl-page-header").html(), {user: self._loggedIn}));
 
@@ -135,24 +140,10 @@ RBCSchoolUI.prototype.renderTimeline = function(info) {
     classes: "cf", content: content
   });
   $("#body").html(body);
-
-  // Attach textarea handlers.
-  var charCount = $("#c-count");
-  var sparkText = $("#spark-input");
-  $("#spark-button").css("visibility", "hidden");
-  function _textAreaHandler() {
-    var text = sparkText.val();
-    charCount.text("" + (self._limit - text.length));
-    if (text.length > self._limit) {
-      charCount.css("color", "#FF6347");
-      $("#spark-button").css("visibility", "hidden");
-    } else if (text.length == 0) {
-      $("#spark-button").css("visibility", "hidden");
-    } else {
-      charCount.css("color", "#999");
-      $("#spark-button").css("visibility", "visible");
-    }
-  }
+ 
+  console.log('*************((((((((((((((((((()))))))))))))))))))*************');
+  
+  
   charCount.text(self._limit);
   sparkText.keyup(_textAreaHandler);
   sparkText.blur(_textAreaHandler);
