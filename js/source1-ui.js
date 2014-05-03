@@ -35,14 +35,6 @@ RBCFeedUI.prototype._setupHandlers = function() {
 		e.preventDefault();
 		self._go($(this).attr("href"));
 	});
-	$(document).on("click", "#search-button", function(e) {
-		e.preventDefault();
-		self._go("/?search");
-	});
-	$(document).on("click", "#top-logo", function(e) {
-		e.preventDefault();
-		self._go("/");
-	});
 	$(document).on("click", "#logout-button", function(e) {
 		e.preventDefault();
 		self.logout();
@@ -101,12 +93,11 @@ RBCFeedUI.prototype._postHandler = function(e) {
 	self._spinner.spin(containerEl.get(0));
 	self._rbcfeed.post(sparkText.val(), function(err, done) {
 		if (!err) {
-			message.html("Posted!").css("background", "#008000");
+			message.html("Posted!");
 			sparkText.val("");
 		} else {
-			message.html("Posting failed!").css("background", "#FF6347");
+			message.html("Posting failed!");
 		}
-		self._spinner.stop();
 		$("#c-count").val(self._limit);
 		message.css("visibility", "visible");
 	});
@@ -151,7 +142,6 @@ RBCFeedUI.prototype._editableHandler = function(id, value) {
 };
 
 RBCFeedUI.prototype.onLoginStateChange = function(error, info) {
-	this._spinner.stop();
 	this._loggedIn = info;
 	$("#header").html(Mustache.to_html($("#tmpl-page-header").html(), {
 		user : this._loggedIn
@@ -191,17 +181,7 @@ RBCFeedUI.prototype.renderHome = function(e) {
 
 	$("#header").html($("#tmpl-index-header").html());
 
-	// Preload animation.
-	var path = "img/curl-animate.gif";
-	var img = new Image();
-	img.src = path;
 
-	// Setup curl on hover.
-	$(".ribbon-curl").find("img").hover(function() {
-		$(this).attr("src", path);
-	}, function() {
-		$(this).attr("src", "img/curl-static.gif");
-	});
 
 	var body = Mustache.to_html($("#tmpl-content").html(), {
 		classes : "cf home",
@@ -248,8 +228,8 @@ RBCFeedUI.prototype.renderTimeline = function(info) {
 	}));
 
 	// Render placeholders for location / bio if not filled in.
-	info.location = info.location.substr(0, 80) || "Your Location...";
-	info.bio = info.bio.substr(0, 141) || "Your Bio...";
+	info.location = info.location.substr(0, 80);
+	info.bio = info.bio.substr(0, 141);
 
 	// Render body.
 	var content = Mustache.to_html($("#tmpl-timeline-content").html(), info);
@@ -259,7 +239,7 @@ RBCFeedUI.prototype.renderTimeline = function(info) {
 	});
 	$("#body").html(body);
 
-	// Attach textarea handlers.
+/**	// Attach textarea handlers.
 	var charCount = $("#c-count");
 	var sparkText = $("#spark-input");
 	function _textAreaHandler() {
@@ -280,7 +260,7 @@ RBCFeedUI.prototype.renderTimeline = function(info) {
 	charCount.text(self._limit);
 	sparkText.keyup(_textAreaHandler);
 	sparkText.blur(_textAreaHandler);
-
+**/
 	// Attach post spark button.
 	$("#spark-button").click(self._postHandler.bind(self));
 

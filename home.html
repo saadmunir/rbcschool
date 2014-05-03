@@ -49,26 +49,41 @@
     
 
     <div class="container">
+    	<div class="third">
+				<div class="media">
+				<div class="img avatar">
+				<a class="profile-link" href="/?profile={{id}}"><img src="{{pic}}" alt="{{name}}"></a>
+				</div>
+				<div class="body">
+				<h2 class="end"><a class="profile-link" href="/?profile={{id}}">{{name}}</a></h2>
+				<div class="big-copy end">
+				<div class="editable" id="inputLocation">{{location}}</div>
+				</div>
+				<div class="big-copy">
+				<div class="editable" id="inputBio">{{bio}}</div>
+				</div>
+				</div>
+				</div>
+				<div class="field">
+				<textarea id="spark-input" class="text" rows="4" cols="10" placeholder="Share an update"></textarea>
+				</div>
+				<small class="field-help"><span id="c-count"></span> characters remaining</small>
+				<div id="spark-button-div">
+				<a id="spark-button" href="#" class="btn default full pushv4">Update Status</a>
+				</div>
 
-      <div class="row row-offcanvas row-offcanvas-right">
-		
-    <div class="container">
+				<div class="separator pushv4"></div>
 
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="email" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" class="form-control" placeholder="Password" required>
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-        <button id= "login-button" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
+				<div id="suggested-users">
+				<h3>We suggest you follow:</h3>
+				</div>
+				
+				</div>
+				<div class="twothird">
+				<ul id="spark-timeline-list" class="item-list">
+				</ul>
+				</div>
 
-    </div> <!-- /container -->
-        <header id="header">
-      	</header>
-        
-      </div>
       
       
     
