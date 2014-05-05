@@ -10,6 +10,7 @@
 		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
 		<script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.3.2/firebase-simple-login.js'></script>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/custom.css">
 		
 		<link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-touch-icon-114x114.png">
@@ -39,28 +40,102 @@
 	</head>
 
 	<body>
+		
+		<div class="navbar-wrapper">
+	      <div class="container">
+	        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#"><img src="images/porky_face.jpg" alt="Porky" height="30px" /></a>
+			    </div>
+			
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="#">Home</a></li>
+			        <li><a href="#">Profile</a></li>
+			      </ul>
+			      
+			      <ul class="nav navbar-nav navbar-right">
+			      	<form class="navbar-form navbar-left" role="search">
+			        	<div class="form-group">
+			          		<input type="text" class="form-control" placeholder="Search">
+			        	</div>
+			        	<button type="submit" class="btn btn-default">Submit</button>
+			     	</form>
+			        <li><a href="#">Sign Out</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</div>
+		</div>
+		</div>
+		
 		<div id="wrapper">
 			<header id="header">
 				<script id="tmpl-page-header" type="text/html">
 					<div class="wrapper cf">
-						<h1 class="logo">
-							<a href="#" id="top-logo">
-								<img src="img/wordmark.png" alt="Firefeed" />
-							</a>
-						</h1>
-						<nav>
+						
+						<!--nav>
 							<a id="search-button" href="#">Search</a>
 							{{#user}}
 							&nbsp;|&nbsp;
 							<a id="logout-button" href="#">Logout</a>
 							{{/user}}
-						</nav>
+						</nav-->
 					</div>
 				</script>
 			</header>
 		</div>
+		
+	
+		<div class="container marketing">
+	
+	      <div class="row featurette main-row">
+	        <div class="col-md-7">
+	          <h2 class="featurette-heading">Welcome to Porky! <span class="text-muted">It'll blow your mind.</span></h2>
+	          <p class="lead">Porky is your college's very own microblogging site.
+		  			<br />Stay in touch with your friends and get updated about your lectures
+		  		</p>
+		  		<p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+	        </div>
+	        <div class="col-md-3">
+	        	<div id="login-div" class="pushv4">
+						<form class="form-signin" role="form">
+							<input id= "emailID" type="email" class="form-control" placeholder="Email address" required autofocus>
+							<input id = "passwordID" type="password" class="form-control" placeholder="Password" required>
+							<button id = "login-button" class="btn btn-lg btn-primary btn-block" type="submit">
+								Sign in
+							</button>
+							<label class="checkbox">
+								<input type="checkbox" value="remember-me">
+								Remember me 
+							</label>
+						</form>
+						
+						<form class="form-signin" role="form">
+							<input id= "firstNameID" class="form-control" placeholder="First Name" required autofocus>
+							<input id = "lastNameID" class="form-control" placeholder="Last Name" required>
+							<input id= "bioID" class="form-control" placeholder="Bio" required autofocus>
+							<input id = "locationID" class="form-control" placeholder="Location" required>
+							<button id = "createaccount-button" class="btn btn-lg btn-primary btn-block" type="submit">
+								Create Account
+							</button>
+						</form>
+						
+					</div>
+	        </div>
+	      </div>
+     </div>
 
-		<div id="body">
+		<!--div id="body">
 			<script id="tmpl-content" type="text/html">
 				<div id="content" class="{{classes}}">
 					<div class="wrapper">
@@ -137,7 +212,7 @@
 					<ul id="spark-timeline-list" class="item-list">
 					</ul>
 				</div>
-			</script>
+			</script-->
 			<!--
 			<script id="tmpl-search-content" type="text/html">
 			<input class="text" type="text" id="search-input" />
@@ -270,16 +345,6 @@
 		</div>
 		<!-- #wrapper END -->
 
-		<footer id="footer">
-			<ul>
-				<li id="about-link">
-					<a href="about.html">About</a>
-				</li>
-				<li>
-					Follow <a href="//twitter.com/firebase" target="_blank">@Firebase</a>
-				</li>
-			</ul>
-		</footer>
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
